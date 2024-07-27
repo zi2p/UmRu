@@ -1,0 +1,49 @@
+﻿# Папки и файлы конфигурации IDE
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Папка сборки
+bin/
+obj/
+
+# Папки конфигурации npm, Yarn
+node_modules/
+yarn.lock
+package-lock.json
+
+# Лог файлы
+*.log
+
+# Настройки OS
+.DS_Store
+Thumbs.db
+
+# Локальные папки IIS
+.localhistory
+.publish*
+.vs/
+
+# Секретные файлы
+secrets.json
+
+# Файлы конфигурации среды
+*.local
+
+# Кэш и временные файлы
+*.tmp
+*.bak
+*.swp
+*~
+
+# Исключения для специфичных библиотек и фреймворков
+wwwroot/lib/
+
+# Тестовые результаты
+TestResults/
+
+# Папка пакетов NuGet
+packages/
