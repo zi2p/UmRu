@@ -1,0 +1,12 @@
+C:\Users\julia\RiderProjects\BlazorAppUmRu\BlazorAppUmRu\Shared\bin\Debug\net7.0\BlazorAppUmRu.Shared.deps.json
+C:\Users\julia\RiderProjects\BlazorAppUmRu\BlazorAppUmRu\Shared\bin\Debug\net7.0\BlazorAppUmRu.Shared.dll
+C:\Users\julia\RiderProjects\BlazorAppUmRu\BlazorAppUmRu\Shared\bin\Debug\net7.0\BlazorAppUmRu.Shared.pdb
+C:\Users\julia\RiderProjects\BlazorAppUmRu\BlazorAppUmRu\Shared\obj\Debug\net7.0\BlazorAppUmRu.Shared.csproj.AssemblyReference.cache
+C:\Users\julia\RiderProjects\BlazorAppUmRu\BlazorAppUmRu\Shared\obj\Debug\net7.0\BlazorAppUmRu.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\julia\RiderProjects\BlazorAppUmRu\BlazorAppUmRu\Shared\obj\Debug\net7.0\BlazorAppUmRu.Shared.AssemblyInfoInputs.cache
+C:\Users\julia\RiderProjects\BlazorAppUmRu\BlazorAppUmRu\Shared\obj\Debug\net7.0\BlazorAppUmRu.Shared.AssemblyInfo.cs
+C:\Users\julia\RiderProjects\BlazorAppUmRu\BlazorAppUmRu\Shared\obj\Debug\net7.0\BlazorAppUmRu.Shared.csproj.CoreCompileInputs.cache
+C:\Users\julia\RiderProjects\BlazorAppUmRu\BlazorAppUmRu\Shared\obj\Debug\net7.0\BlazorAppUmRu.Shared.dll
+C:\Users\julia\RiderProjects\BlazorAppUmRu\BlazorAppUmRu\Shared\obj\Debug\net7.0\refint\BlazorAppUmRu.Shared.dll
+C:\Users\julia\RiderProjects\BlazorAppUmRu\BlazorAppUmRu\Shared\obj\Debug\net7.0\BlazorAppUmRu.Shared.pdb
+C:\Users\julia\RiderProjects\BlazorAppUmRu\BlazorAppUmRu\Shared\obj\Debug\net7.0\ref\BlazorAppUmRu.Shared.dll

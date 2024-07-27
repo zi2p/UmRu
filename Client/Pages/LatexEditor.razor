@@ -1,0 +1,24 @@
+﻿@page "/latex-editor"
+@using System.Text.Json
+
+<h3>LaTeX Editor</h3>
+<textarea @bind="latexInput" rows="5" cols="70"></textarea>
+<button @onclick="SaveAndShow">Сохранить и показать</button>
+
+@if (!string.IsNullOrEmpty(displayText))
+{
+    <p><strong>Обработанный LaTeX:</strong></p>
+    <p>@displayText</p>
+}
+
+@code {
+    private string latexInput;
+    private string displayText;
+
+    private void SaveAndShow()
+    {
+        var json = JsonSerializer.Serialize(new { LaTeX = latexInput });
+        System.IO.File.WriteAllText("wwwroot/latex_data.json", json);
+        displayText = latexInput.Replace("\\", "").Replace("{", "").Replace("}", "");
+    }
+}
