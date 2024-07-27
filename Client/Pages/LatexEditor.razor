@@ -1,0 +1,84 @@
+﻿@* @page "/latex-editor" *@
+@* *@
+@* <h3>LaTeX Editor</h3> *@
+@* <textarea @bind="latexInput" rows="5" cols="70"></textarea> *@
+@* <button @onclick="SaveAndShow">Сохранить и показать</button> *@
+@* *@
+@* @if (!string.IsNullOrEmpty(displayText)) *@
+@* { *@
+@*     <p><strong>Обработанный LaTeX:</strong></p> *@
+@*     <p>@displayText</p> *@
+@* } *@
+@* *@
+@* @code { *@
+@*     private string latexInput="ww"; *@
+@*     private string displayText="r"; *@
+@* *@
+@*     private void SaveAndShow() *@
+@*     { *@
+@*         try *@
+@*         { *@
+@*             Console.WriteLine("SaveAndShow called"); *@
+@*             Console.WriteLine($"LaTeX Input: {latexInput}"); *@
+@* *@
+@*             var json = JsonSerializer.Serialize(new { LaTeX = latexInput }); *@
+@*             var path = Path.Combine("wwwroot", "latex_data.json"); *@
+@*             Console.WriteLine($"Saving data to: {path}"); *@
+@* *@
+@*             File.WriteAllText(path, json); *@
+@* *@
+@*             displayText = latexInput.Replace("\\", "").Replace("{", "").Replace("}", ""); *@
+@*             Console.WriteLine($"Processed text: {displayText}"); *@
+@*             Console.WriteLine("Data saved and displayed"); *@
+@*         } *@
+@*         catch (Exception ex) *@
+@*         { *@
+@*             Console.WriteLine($"Error saving data: {ex.Message}"); *@
+@*         } *@
+@*     } *@
+@* } *@
+@page "/latex-editor"
+@inject HttpClient Http
+
+<h3>LaTeX Editor</h3>
+<textarea @bind="latexInput" rows="5" cols="70"></textarea>
+<button @onclick="SaveAndShow">Сохранить и показать</button>
+
+@if (!string.IsNullOrEmpty(displayText))
+{
+    <p><strong>Обработанный LaTeX:</strong></p>
+    <p>@displayText</p>
+}
+
+@code {
+    private string latexInput = "ww";
+    private string displayText = "r";
+
+    private async Task SaveAndShow()
+    {
+        try
+        {
+            var data = new LaTeXData { LaTeX = latexInput };
+            var json = new StringContent(System.Text.Json.JsonSerializer.Serialize(data), System.Text.Encoding.UTF8, "application/json");
+
+            var response = await Http.PostAsync("https://localhost:5001/api/LaTeX", json);
+            if (response.IsSuccessStatusCode)
+            {
+                displayText = latexInput.Replace("\\", "").Replace("{", "").Replace("}", "");
+            }
+            else
+            {
+                Console.WriteLine($"Error saving data: {response.ReasonPhrase}");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error saving data: {ex.Message}");
+        }
+    }
+
+    public class LaTeXData
+    {
+        public string LaTeX { get; set; }
+    }
+}
